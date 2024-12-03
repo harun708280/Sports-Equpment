@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import { NavLink } from "react-router-dom";
-
+import { Tooltip } from "flowbite-react";
 const Nav = () => {
-  const { name, LoginGoogle } = useContext(UserAuthContext);
+  const { name, LoginGoogle, user,Logout } = useContext(UserAuthContext);
+  console.log(user?.displayName);
+  
   const handleLoginGoogle = () => {
     LoginGoogle()
       .then((result) => {
@@ -114,10 +116,23 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <NavLink to='/login'><button className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
-            Login 
-          </button></NavLink>
+        <div className="navbar-end space-x-5">
+          <div className="">
+            <Tooltip content={`${user?displayName:'No Login '}`}>
+            <img className="w-12 h-12 rounded-full" src={user?.photoURL||"https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"} alt="" />
+            </Tooltip>
+          </div>
+          {
+            user?
+            <button onClick={()=>Logout()} className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
+              LogOut
+            </button>
+          :<NavLink to="/login">
+            <button className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
+              Login
+            </button>
+          </NavLink>
+          }
         </div>
       </div>
     </div>
