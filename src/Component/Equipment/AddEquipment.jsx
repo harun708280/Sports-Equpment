@@ -1,12 +1,47 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
+    const handleAddEquipment=(e)=>{
+        e.preventDefault()
+        const form=e.target
+        const itemName=form.itemName.value
+        const categoryName=form.categoryName.value
+        const description=form.description.value
+        const price=form.price.value
+        const rating=form.rating.value
+        const customization=form.customization.value
+        const processingTime=form.processingTime.value
+        const stockStatus=form.stockStatus.value
+        const image=form.image.value
+        const equipment={itemName,description,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
+        console.log(equipment);
+        fetch(`http://localhost:9000/equipments`,{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(equipment)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if (data.insertedId) {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You equipment successFully Added!",
+                    icon: "success"
+                  });
+            }
+            
+        })
+
+    }
   return (
     <div>
-      <div className="w-10/12 mx-auto my-12">
-        <h1 className="text-center text-5xl font-bold logo">Add Equipment</h1>
+      <div className="w-10/12 mx-auto my-12 bg-base-200 shadow-lg shadow-[#374820]  p-5">
+        <h1 className="text-center text-5xl font-bold logo">Add Your Equipment</h1>
         <div className="mt-7">
-          <form action="">
+          <form onSubmit={handleAddEquipment}>
             <div className="grid grid-cols-2 gap-6">
               {/* Item Name */}
               <div className="form-control">

@@ -115,9 +115,9 @@ const Nav = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white" onClick={handleLoginGoogle}>
+          <NavLink to='/login'><button className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
             Login 
-          </button>
+          </button></NavLink>
         </div>
       </div>
     </div>

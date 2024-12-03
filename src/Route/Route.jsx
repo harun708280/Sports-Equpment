@@ -3,6 +3,8 @@ import Layout from "../Layout/Layout";
 import Home from "../Component/Home/Home";
 import AddEquipment from "../Component/Equipment/AddEquipment";
 import AllEquipment from "../Component/Equipment/AllEquipment";
+import LoginForm from "../Component/Security/LoginForm";
+import RegisterForm from "../Component/Security/RegisterForm";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
           path:'/all-Equipment',
           element:<AllEquipment></AllEquipment>
 
+        },
+        {
+          path:'/login',
+          element:<LoginForm></LoginForm>
+        },
+        {
+          path:'/register',
+          element:<RegisterForm></RegisterForm>
         }
       ]
     },
