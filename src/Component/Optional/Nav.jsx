@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
 const Nav = () => {
   const { name, LoginGoogle, user,Logout } = useContext(UserAuthContext);
-  console.log(user?.displayName);
+  
   
   const handleLoginGoogle = () => {
     LoginGoogle()
@@ -71,8 +71,8 @@ const Nav = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e]"
-                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e]"
+                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"
+                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] transition-all duration-300"
                 }
               >
                 Home
@@ -83,8 +83,8 @@ const Nav = () => {
                 to="/all-Equipment"
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e]"
-                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] "
+                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"
+                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] transition-all duration-300"
                 }
               >
                 All Sports Equipment
@@ -95,8 +95,8 @@ const Nav = () => {
                 to="/add-Equipment"
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e]"
-                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e]"
+                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"
+                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] transition-all duration-300"
                 }
               >
                 Add Equipment
@@ -107,8 +107,8 @@ const Nav = () => {
                 to="/my-Equipment"
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e]"
-                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e]"
+                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"
+                    : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] transition-all duration-300"
                 }
               >
                 My Equipment
@@ -118,7 +118,7 @@ const Nav = () => {
         </div>
         <div className="navbar-end space-x-5">
           <div className="">
-            <Tooltip content={`${user?displayName:'No Login '}`}>
+            <Tooltip content={`${user?user.displayName:'No Login '}`}>
             <img className="w-12 h-12 rounded-full" src={user?.photoURL||"https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"} alt="" />
             </Tooltip>
           </div>

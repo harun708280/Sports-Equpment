@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Swal from "sweetalert2";
+import { UserAuthContext } from "../../Firebase/Authentication";
 
 const AddEquipment = () => {
+    const {user}=useContext(UserAuthContext)
+    
+    
     const handleAddEquipment=(e)=>{
         e.preventDefault()
         const form=e.target
@@ -14,7 +18,8 @@ const AddEquipment = () => {
         const processingTime=form.processingTime.value
         const stockStatus=form.stockStatus.value
         const image=form.image.value
-        const equipment={itemName,description,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
+        const users=user.email
+        const equipment={users,itemName,description,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
         console.log(equipment);
         fetch(`http://localhost:9000/equipments`,{
             method:'POST',

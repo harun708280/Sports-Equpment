@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    overflow-y:scroll
+}
 
 .logo{
     font-family: "Rancho", serif;
