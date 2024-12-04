@@ -104,7 +104,7 @@ const Nav = () => {
             </li>
             <li>
               <NavLink
-                to="/my-Equipment"
+                to="/my-equipment"
                 className={({ isActive }) =>
                   isActive
                     ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"

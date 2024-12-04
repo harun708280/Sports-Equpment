@@ -12,11 +12,13 @@ const Product = ({ item }) => {
             alt="Shoes"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div className=" my-4">
+          <div className="flex space-x-16 items-center justify-center">
+          <h2 className="card-title">{itemName}</h2>
+          <p className="card-title">{price} Taka</p>
+          </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn btn-primary w-full">View Details</button>
           </div>
         </div>
       </div>
