@@ -4,6 +4,7 @@ import HomeCaro from './HomeCaro';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Product from './Product';
 import Category from './Category';
+import Service from './Service';
 
 const Home = () => {
     const loadData=useLoaderData()
@@ -26,6 +27,7 @@ const Home = () => {
     return (
         <div>
            <HomeCaro></HomeCaro>
+           <Service></Service>
            <div className="">
 
             <Category category={category} ></Category>

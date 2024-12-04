@@ -10,7 +10,7 @@ const Layout = () => {
             <Toaster></Toaster>
             <Nav></Nav>
 
-            <div className="">
+            <div className="max-w-[1900px] mx-auto">
                 <Outlet></Outlet>
             </div>
             
