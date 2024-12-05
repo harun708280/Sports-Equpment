@@ -13,7 +13,7 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchData=async()=>{
-            const res=await fetch(`http://localhost:9000/equipments/categories`)
+            const res=await fetch(`https://sports-equiepment.vercel.app/equipments/categories`)
             const data=await res.json()
 
             setCategory(data)

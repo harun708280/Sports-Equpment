@@ -3,7 +3,17 @@ import { UserAuthContext } from "../../Firebase/Authentication";
 import { NavLink } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
 import { DarkContext } from "./Theme";
+import olp from "./olympic-athlete.json"
+import Lottie from "lottie-react";
 const Nav = () => {
+  const animation={
+    loop:true,
+    autoplay:true,
+    animationData:olp,
+    rendererSettings:{
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
   const { name, LoginGoogle, user, Logout } = useContext(UserAuthContext);
 
   const { isDark, setIsDark } = useContext(DarkContext);
@@ -70,7 +80,10 @@ const Nav = () => {
             </ul>
           </div>
           <a className="btn btn-ghost text-4xl logo bg-custom-gradient hover:bg-[#579505] text-white">
-            Sports Zone
+            Sports Zone <Lottie animationData={olp}
+            loop={true}
+            autoplay={true}
+             className="h-10 w-16"></Lottie>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

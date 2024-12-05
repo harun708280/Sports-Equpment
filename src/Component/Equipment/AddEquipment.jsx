@@ -23,7 +23,7 @@ const AddEquipment = () => {
         const users=user.email
         const equipment={users,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
         console.log(equipment);
-        fetch(`http://localhost:9000/equipments`,{
+        fetch(`https://sports-equiepment.vercel.app/equipments`,{
             method:'POST',
             headers:{
                 'content-type':'application/json'

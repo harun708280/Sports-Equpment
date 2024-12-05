@@ -17,7 +17,7 @@ const MyEquipment = () => {
     if (userEmail) {
       const fetchData = async () => {
         const res = await fetch(
-          `http://localhost:9000/all-Equipment?user=${userEmail}`
+          `https://sports-equiepment.vercel.app/all-Equipment?user=${userEmail}`
         );
         const data = await res.json();
 
@@ -48,7 +48,7 @@ const MyEquipment = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:9000/equipments/${id}`, {
+          fetch(`https://sports-equiepment.vercel.app/equipments/${id}`, {
             method: "DELETE",
             headers: {
               "content-type": "application/json",
@@ -91,7 +91,7 @@ const MyEquipment = () => {
 
   return (
     <div className="flex w-11/12 my-12 mx-auto">
-      <div className="w-6/12 ">
+      <div className="w-2/12 ">
         <div className="p-4">
           {/* Your Profile Title */}
           <h1

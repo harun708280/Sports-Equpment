@@ -20,17 +20,17 @@ const router = createBrowserRouter([
         {
           path:'/',
           element:<Home></Home>,
-          loader:()=>fetch(`http://localhost:9000/equipments`),
+          loader:()=>fetch(`https://sports-equiepment.vercel.app/equipments`),
           children:[
             {
               path:'/Equipment/:category',
               element:<LaodCategory></LaodCategory>,
-              loader:({params})=>fetch(`http://localhost:9000/equipments?category=${ params.category}`)
+              loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments?category=${ params.category}`)
             },
             {
               path:'/',
               element:<LaodCategory></LaodCategory>,
-              loader:()=>fetch(`http://localhost:9000/equipments`)
+              loader:()=>fetch(`https://sports-equiepment.vercel.app/equipments`)
             }
           ]
         },
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         {
           path:'/all-Equipment',
           element:<AllEquipment></AllEquipment>,
-          loader:()=>fetch(`http://localhost:9000/all-Equipment`)
+          loader:()=>fetch(`https://sports-equiepment.vercel.app/all-Equipment`)
 
         },
         {
@@ -61,12 +61,12 @@ const router = createBrowserRouter([
         {
           path:'/details/:id',
           element:<Private><Details></Details></Private>,
-          loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
+          loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments/${params.id}`)
         },
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
+          loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments/${params.id}`)
         }
       ]
     },
