@@ -9,6 +9,7 @@ import Product from "../Component/Home/Product";
 import LaodCategory from "../Component/Home/LaodCategory";
 import MyEquipment from "../Component/Equipment/MyEquipment";
 import Details from "../Component/Details/Details";
+import Private from "../Private/Private";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/add-Equipment',
-          element:<AddEquipment></AddEquipment>
+          element:<Private><AddEquipment></AddEquipment></Private>
 
         }
         ,
@@ -54,11 +55,11 @@ const router = createBrowserRouter([
         },
         {
           path:'/my-equipment',
-          element:<MyEquipment></MyEquipment>
+          element:<Private><MyEquipment></MyEquipment></Private>
         },
         {
           path:'/details/:id',
-          element:<Details></Details>,
+          element:<Private><Details></Details></Private>,
           loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
         }
       ]

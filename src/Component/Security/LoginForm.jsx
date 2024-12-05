@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaGoogle,FaEye, FaEyeSlash,} from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
@@ -8,6 +8,9 @@ import toast from "react-hot-toast";
 const LoginForm = () => {
     const {LoginGoogle,Login}=useContext(UserAuthContext)
     const [showPassword, setShowPassword] = useState(false);
+    const location=useLocation()
+    console.log(location.state);
+    
     const navigate=useNavigate()
   const handleLogin = (e) => {
     e.preventDefault();
@@ -17,7 +20,7 @@ const LoginForm = () => {
     Login(email,password)
     .then(result=>{
         toast.success('successfully Login')
-        navigate('/')
+        navigate(`${location.state?location.state:'/'}`)
     })
     .catch(error=>{
         switch (error.code) {
@@ -50,7 +53,7 @@ const LoginForm = () => {
     LoginGoogle()
     .then(result=>{
         toast.success('successfully login')
-        navigate('/')
+        navigate(`${location.state?location.state:'/'}`)
     })
     .catch(error=>{
         switch (error.code) {
