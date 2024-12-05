@@ -7,7 +7,7 @@ import { TbPlaneTilt } from "react-icons/tb";
 const Service = () => {
     return (
         <div>
-            <div className="flex ">
+            <div className="flex w-11/12 mx-auto ">
                 <div className="flex p-5 space-x-6 items-center border">
                     <div className="">
                         <span className='text-4xl text-[#6eb80e]'><TbPlaneTilt />

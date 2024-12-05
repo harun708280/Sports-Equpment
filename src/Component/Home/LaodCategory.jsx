@@ -7,7 +7,8 @@ const LaodCategory = () => {
     console.log(loadData);
     
     return (
-        <div>
+        <div className='flex '>
+            
             <div className="grid grid-cols-3 gap-6 w-11/12 mx-auto my-12">
            
            {
