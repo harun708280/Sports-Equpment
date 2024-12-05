@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
+import { DarkContext } from "../Optional/Theme";
 const AllEquipment = () => {
   const loadData = useLoaderData();
   console.log(loadData);
 //   itemName,description,categoryName,description,price,rating,customization,processingTime,stockStatus,image
-
+  const {isDark}=useContext(DarkContext)
   return (
     <div>
       <div className="w-10/12 mx-auto my-12">
@@ -14,7 +15,7 @@ const AllEquipment = () => {
         </h2>
         <div className="">
           <div className="overflow-x-auto">
-            <table className="table table-zebra">
+            <table className={`${isDark?"table ":"table table-zebra"}`}>
               {/* head */}
               <thead>
                 <tr className="text-lg bg-custom-gradient text-white">
@@ -31,7 +32,7 @@ const AllEquipment = () => {
                 {/* row 1 */}
 
                 {loadData.map((item,idx) => (
-                  <tr>
+                  <tr className={`${isDark?'bg-green-500':''}`}>
                     <th>{idx+1}</th>
                     <td><img className="h-14 w-14" src={item.image} alt="" /></td>
                     <td>{item.itemName}</td>

@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import Swal from "sweetalert2";
+import { DarkContext } from "../Optional/Theme";
 
 const Update = () => {
+  const {isDark}=useContext(DarkContext)
   const loadData = useLoaderData();
   const navigate=useNavigate()
   const { user } = useContext(UserAuthContext);
@@ -117,11 +119,11 @@ const Update = () => {
     <div>
       <div>
         <div className="w-10/12 mx-auto my-12 bg-base-200 shadow-lg shadow-[#374820]  p-5">
-          <h1 className="text-center text-5xl font-bold logo">
+          <h1 className={`${isDark?"text-center text-5xl text-[#6eb80e] font-bold logo":"text-center text-5xl font-bold logo"}`}>
             Update Your Equipment
           </h1>
           <div className="mt-7">
-            <form onSubmit={handleUpdate}>
+            <form onSubmit={handleUpdate} className={`${isDark && 'text-black'}`}>
               <div className="grid grid-cols-2 gap-6">
                 {/* Item Name */}
                 <div className="form-control">

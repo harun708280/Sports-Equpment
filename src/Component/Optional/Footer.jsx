@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkContext } from "./Theme";
 
 const Footer = () => {
+    const {isDark}=useContext(DarkContext)
   return (
-    <div className="bg-base-200">
-      <footer className="footer w-11/12 mx-auto  text-base-content p-10">
+    <div className={isDark?'dark text-white':'bg-base-200'}>
+      <footer className="footer w-11/12 mx-auto   p-10">
         <aside>
           <svg
             width="50"
@@ -22,7 +24,7 @@ const Footer = () => {
             Providing reliable tech since 1992
           </p>
         </aside>
-        <nav>
+        <nav className={isDark?'dark text-white':'bg-base-200'}>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>

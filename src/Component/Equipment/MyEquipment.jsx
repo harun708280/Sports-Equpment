@@ -90,7 +90,7 @@ const MyEquipment = () => {
   };
 
   return (
-    <div className="flex w-11/12 mx-auto">
+    <div className="flex w-11/12 my-12 mx-auto">
       <div className="w-6/12 ">
         <div className="p-4">
           {/* Your Profile Title */}
