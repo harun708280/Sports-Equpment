@@ -60,7 +60,7 @@ const Nav = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-4xl logo bg-[#6eb80e] hover:bg-[#579505] text-white">
+          <a className="btn btn-ghost text-4xl logo bg-custom-gradient hover:bg-[#579505] text-white">
             Sports Zone
           </a>
         </div>
@@ -83,7 +83,7 @@ const Nav = () => {
                 to="/all-Equipment"
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 border-[#6eb80e] text-xl font-bold text-[#6eb80e] transition-all duration-300"
+                    ? "border-b-4 border-custom-gradient text-xl font-bold text-custom-gradient transition-all duration-300"
                     : "border-b-4 border-transparent hover:border-[#6eb80e] hover:text-xl hover:font-bold hover:text-[#6eb80e] transition-all duration-300"
                 }
               >
@@ -124,11 +124,11 @@ const Nav = () => {
           </div>
           {
             user?
-            <button onClick={()=>Logout()} className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
+            <button onClick={()=>Logout()} className="btn bg-custom-gradient hover:bg-[#6eb80e] text-white">
               LogOut
             </button>
           :<NavLink to="/login">
-            <button className="btn bg-[#6eb80e] hover:bg-[#6eb80e] text-white">
+            <button className="btn bg-custom-gradient hover:bg-[#6eb80e] text-white">
               Login
             </button>
           </NavLink>

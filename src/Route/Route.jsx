@@ -8,6 +8,7 @@ import RegisterForm from "../Component/Security/RegisterForm";
 import Product from "../Component/Home/Product";
 import LaodCategory from "../Component/Home/LaodCategory";
 import MyEquipment from "../Component/Equipment/MyEquipment";
+import Details from "../Component/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
         {
           path:'/my-equipment',
           element:<MyEquipment></MyEquipment>
+        },
+        {
+          path:'/details/:id',
+          element:<Details></Details>,
+          loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
         }
       ]
     },

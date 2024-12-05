@@ -6,7 +6,11 @@ export default {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}" // Include Flowbite content
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(145deg, #9cb80e 0%, #7db80e 51%, #6eb80e 75%)',
+      },
+    },
   },
   plugins: [
     require('daisyui'),

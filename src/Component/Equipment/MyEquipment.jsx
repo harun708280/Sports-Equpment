@@ -35,7 +35,7 @@ const MyEquipment = () => {
                   <p className="card-title">{item.price} Taka</p>
                 </div>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary w-full">
+                  <button className="btn bg-custom-gradient text-white w-full">
                     View Details
                   </button>
                 </div>

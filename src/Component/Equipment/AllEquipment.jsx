@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 const AllEquipment = () => {
   const loadData = useLoaderData();
@@ -17,7 +17,7 @@ const AllEquipment = () => {
             <table className="table table-zebra">
               {/* head */}
               <thead>
-                <tr className="text-lg bg-[#6eb80e] text-white">
+                <tr className="text-lg bg-custom-gradient text-white">
                   <th></th>
                   <th>Image</th>
                   <th>Name</th>
@@ -38,7 +38,7 @@ const AllEquipment = () => {
                     <td>{item.categoryName}</td>
                     <td>{item.price} Taka</td>
                     <td className="flex items-center space-x-6">{item.rating} <span className="text-orange-600"><IoIosStar /></span></td>
-                    <td><button className="btn bg-[#6eb80e] text-white">Details</button></td>
+                    <td><NavLink to={`/details/${item._id}`}><button className="btn bg-[#6eb80e] text-white">Details</button></NavLink></td>
                   </tr>
                 ))}
 
