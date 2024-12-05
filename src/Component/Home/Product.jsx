@@ -43,9 +43,9 @@ const Product = ({ item }) => {
         </div>
 
         <div className="card-actions justify-between mt-5">
-          <button className="btn bg-custom-gradient text-white w-full">
+          <NavLink className='w-full' to={`/details/${_id}`} ><button className="btn bg-custom-gradient text-white w-full">
             View Details <FaEye></FaEye>
-          </button>
+          </button></NavLink>
           
         </div>
       </div>

@@ -1,16 +1,18 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { FaLeftLong } from 'react-icons/fa6';
 import Rating from 'react-rating';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const Details = () => {
     const loadData=useLoaderData()
     console.log(loadData);
     const {users,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,image}=loadData
-    
+    const navigate=useNavigate()
     return (
         <div>
             <div className="w-10/12 mx-auto my-12 shadow-lg shadow-slate-900 p-9">
+            <button onClick={()=>navigate(-1)} className='flex items-center space-x-2 btn bg-custom-gradient text-white my-5'> <FaLeftLong></FaLeftLong> Back </button>
                 <div className="flex items-center space-x-10">
                     <div className="">
                         <img className='h-[500px] w-[500px] rounded-lg' src={image} alt="" srcset="" />
