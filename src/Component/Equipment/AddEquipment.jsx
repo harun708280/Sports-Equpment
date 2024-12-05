@@ -19,7 +19,7 @@ const AddEquipment = () => {
         const stockStatus=form.stockStatus.value
         const image=form.image.value
         const users=user.email
-        const equipment={users,itemName,description,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
+        const equipment={users,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,image}
         console.log(equipment);
         fetch(`http://localhost:9000/equipments`,{
             method:'POST',
