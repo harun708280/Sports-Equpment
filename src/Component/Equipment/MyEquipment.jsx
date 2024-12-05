@@ -11,6 +11,7 @@ const MyEquipment = () => {
   const userEmail = user?.email;
   const [myEquipment, setMyEquipment] = useState([]);
   console.log(myEquipment);
+  const [isProfileVisible, setIsProfileVisible] = useState(false);
 
   useEffect(() => {
     if (userEmail) {
@@ -31,62 +32,95 @@ const MyEquipment = () => {
       customClass: {
         confirmButton: "btn btn-success text-white",
         cancelButton: "btn bg-red-600 mr-7 text-white hover:bg-red-700",
-
       },
-      buttonsStyling: false
+      buttonsStyling: false,
     });
-    swalWithBootstrapButtons.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, delete it!",
-      cancelButtonText: "No, cancel!",
-      
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
 
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:9000/equipments/${id}`, {
-          method: "DELETE",
-          headers: {
-            "content-type": "application/json",
-          },
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              const filterData=myEquipment.filter(item=>item._id!==id)
-              setMyEquipment(filterData)
-              swalWithBootstrapButtons.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-                confirmButtonText:'Ok Done',
-                customClass:{
-                  confirmButton:'bg-custom-gradient'
-                }
-              });
-            }
-            console.log(data);
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:9000/equipments/${id}`, {
+            method: "DELETE",
+            headers: {
+              "content-type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount) {
+                const filterData = myEquipment.filter(
+                  (item) => item._id !== id
+                );
+                setMyEquipment(filterData);
+                swalWithBootstrapButtons.fire({
+                  title: "Deleted!",
+                  text: "Your file has been deleted.",
+                  icon: "success",
+                  confirmButtonText: "Ok Done",
+                  customClass: {
+                    confirmButton: "bg-custom-gradient",
+                  },
+                });
+              }
+              console.log(data);
+            });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your imaginary file is safe :)",
+            icon: "error",
           });
-        
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire({
-          title: "Cancelled",
-          text: "Your imaginary file is safe :)",
-          icon: "error"
-        });
-      }
-    });
-    
+        }
+      });
   };
+  const handleToggle = () => {
+    setIsProfileVisible(!isProfileVisible);
+  };
+
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-8 w-11/12 mx-auto">
+    <div className="flex w-11/12 mx-auto">
+      <div className="w-6/12 ">
+        <div className="p-4">
+          {/* Your Profile Title */}
+          <h1
+            className="text-3xl logo text-center font-bold mb-4 cursor-pointer"
+            onClick={handleToggle}
+          >
+            Your Profile
+          </h1>
+
+          
+          <div
+            className={`transition-all duration-500 ease-in-out ${
+              isProfileVisible
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } overflow-hidden`}
+          >
+            <img
+              className="w-full rounded-xl"
+              src={user.photoURL}
+              alt="Profile"
+            />
+            <h1 className="my-2 text-xl font-bold logo">{user.displayName}</h1>
+            <h1 className="text-xl font-bold">{user.email}</h1>
+            <button className="mt-4 btn bg-custom-gradient text-white">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-8  mx-auto">
         {myEquipment.map((item) => (
           <div>
             <div className="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition">
@@ -121,9 +155,9 @@ const MyEquipment = () => {
                       View Details <FaEye></FaEye>
                     </button>
                   </NavLink>
-                  <button className="btn bg-green-600 text-white hover:bg-green-700">
+                  <NavLink to={`/update/${item._id}`}><button  className="btn bg-green-600 text-white hover:bg-green-700">
                     Update <FaPencilAlt />
-                  </button>
+                  </button></NavLink>
                   <button
                     onClick={() => handleDelete(item._id)}
                     className="btn bg-red-500 text-white hover:bg-red-700"

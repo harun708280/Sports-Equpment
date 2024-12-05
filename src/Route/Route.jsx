@@ -10,6 +10,7 @@ import LaodCategory from "../Component/Home/LaodCategory";
 import MyEquipment from "../Component/Equipment/MyEquipment";
 import Details from "../Component/Details/Details";
 import Private from "../Private/Private";
+import Update from "../Component/Equipment/Update";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
         {
           path:'/details/:id',
           element:<Private><Details></Details></Private>,
+          loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
+        },
+        {
+          path:'/update/:id',
+          element:<Update></Update>,
           loader:({params})=>fetch(`http://localhost:9000/equipments/${params.id}`)
         }
       ]
