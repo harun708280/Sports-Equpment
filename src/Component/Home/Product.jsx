@@ -5,6 +5,8 @@ import Rating from "react-rating";
 import { FaEye, FaPencilAlt, FaStar } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { Zoom } from "react-awesome-reveal";
+import { Card } from "flowbite-react";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const Product = ({ item }) => {
   const {
@@ -22,36 +24,36 @@ const Product = ({ item }) => {
   } = item;
   return (
     <Zoom duration={1500}>
-      <div className="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition">
-      <figure>
-        <img
-          className="w-full h-[300px] object-cover"
-          src={item.image}
-          alt="Equipment"
-        />
-      </figure>
-      <div className="p-4">
-        <h2 className="text-xl font-semibold">{itemName}</h2>
-        <p className="text-[#6eb80e] font-medium">{price} Taka</p>
-        <p className="text-sm text-gray-600 italic">{categoryName}</p>
-        <p className="text-gray-500 mt-2 line-clamp-2">{description}</p>
-        <div className="flex items-center space-x-1 mt-2">
-          <Rating
-            initialRating={item.rating}
-            fullSymbol={<FaStar className="text-orange-600"></FaStar>}
-            emptySymbol={<FaStar className="text-gray-300"></FaStar>}
-          ></Rating>
-          <span className="text-sm text-gray-600">({rating} Reviews)</span>
-        </div>
+      <Card
+      className=" "
+      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+      imgSrc={image}
+    >
+      
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          {itemName}
+        </h5>
+      
+      <div className="mb-5 mt-2.5 flex items-center">
+        <Rating initialRating={rating}
+        fullSymbol={<FaStar className="text-yellow-300"></FaStar>}
+        emptySymbol={<FaStar className="text-gray-300"></FaStar>}
+        >
 
-        <div className="card-actions justify-between mt-5">
-          <NavLink className='w-full' to={`/details/${_id}`} ><button className="btn bg-custom-gradient text-white w-full">
-            View Details <FaEye></FaEye>
-          </button></NavLink>
-          
-        </div>
+        </Rating>
+        <span className="ml-3 mr-2 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
+          {rating}
+        </span>
       </div>
-    </div>
+      <div className="flex items-center justify-between">
+        <span className="text-3xl font-bold text-gray-900 dark:text-white flex space-x-2"><FaBangladeshiTakaSign></FaBangladeshiTakaSign>{price} </span>
+        <NavLink to={`/details/${_id}`}
+          className="rounded-lg bg-custom-gradient px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+        >
+          View Details
+        </NavLink>
+      </div>
+    </Card>
     </Zoom>
   );
 };

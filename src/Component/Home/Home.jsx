@@ -5,6 +5,8 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import Product from './Product';
 import Category from './Category';
 import Service from './Service';
+import NewLatest from './NewLatest';
+// import NewLatest from './NewLatest';
 
 const Home = () => {
     const loadData=useLoaderData()
@@ -20,6 +22,7 @@ const Home = () => {
             
         }
         fetchData()
+        
 
 
     },[])
@@ -36,6 +39,11 @@ const Home = () => {
            <div className="w-11/12 mx-auto">
             <Outlet></Outlet>
            </div>
+           {/* <div className="">
+            <NewLatest></NewLatest>
+
+           </div> */}
+           <NewLatest></NewLatest>
 
 
 
