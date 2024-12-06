@@ -4,9 +4,11 @@ import { PiShoppingBagOpenBold } from "react-icons/pi";
 import { TfiReload, TfiCup } from "react-icons/tfi";
 import { IoDiamond } from "react-icons/io5";
 import { TbPlaneTilt } from "react-icons/tb";
+import { Slide } from 'react-awesome-reveal';
 const Service = () => {
     return (
-        <div>
+        <Slide>
+            <div>
             <div className="flex w-11/12 mx-auto ">
                 <div className="flex p-5 space-x-6 items-center border">
                     <div className="">
@@ -56,6 +58,7 @@ const Service = () => {
                 </div>
             </div>
         </div>
+        </Slide>
     );
 };
 

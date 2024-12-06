@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Rating from "react-rating";
 import { FaEye, FaPencilAlt, FaStar } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import { Zoom } from "react-awesome-reveal";
 
 const Product = ({ item }) => {
   const {
@@ -20,7 +21,8 @@ const Product = ({ item }) => {
     image,
   } = item;
   return (
-    <div className="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition">
+    <Zoom duration={1500}>
+      <div className="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition">
       <figure>
         <img
           className="w-full h-[300px] object-cover"
@@ -50,6 +52,7 @@ const Product = ({ item }) => {
         </div>
       </div>
     </div>
+    </Zoom>
   );
 };
 

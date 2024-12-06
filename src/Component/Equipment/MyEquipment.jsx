@@ -5,6 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import Rating from "react-rating";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Zoom } from "react-awesome-reveal";
 
 const MyEquipment = () => {
   const { user } = useContext(UserAuthContext);
@@ -122,7 +123,8 @@ const MyEquipment = () => {
       </div>
       <div className="grid grid-cols-3 gap-8  mx-auto">
         {myEquipment.map((item) => (
-          <div>
+          <Zoom duration={1500}>
+            <div>
             <div className="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition">
               <figure>
                 <img
@@ -168,6 +170,7 @@ const MyEquipment = () => {
               </div>
             </div>
           </div>
+          </Zoom>
         ))}
       </div>
     </div>

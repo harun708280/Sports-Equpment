@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import { DarkContext } from "../Optional/Theme";
+import { Zoom } from "react-awesome-reveal";
 
 const AddEquipment = () => {
     const {user}=useContext(UserAuthContext)
@@ -45,6 +46,7 @@ const AddEquipment = () => {
     }
   return (
     <div>
+      <Zoom>
       <div className="w-10/12 mx-auto my-12 bg-base-200 shadow-lg shadow-[#374820]  p-5">
         <h1 className={`${isDark?'text-[#6eb80e] text-center text-5xl font-bold logo':"text-center text-5xl font-bold logo"}`}>Add Your Equipment</h1>
         <div className="mt-7">
@@ -197,6 +199,7 @@ const AddEquipment = () => {
           </form>
         </div>
       </div>
+      </Zoom>
     </div>
   );
 };

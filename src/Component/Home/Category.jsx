@@ -1,10 +1,12 @@
 import React from "react";
+import { Bounce, Fade } from "react-awesome-reveal";
 import { NavLink } from "react-router-dom";
 
 const Category = ({ category }) => {
   return (
     <div className="">
-        <h2 className="text-3xl text-center font-bold my-6">Sports Categories</h2>
+       
+        <Fade><h2 className="text-3xl text-center font-bold my-6">Sports Categories</h2></Fade>
         <div className="flex space-x-6 items-center justify-center my-7 text-xl">
         
         <h1>
@@ -33,6 +35,7 @@ const Category = ({ category }) => {
           </NavLink>
         ))}
       </div>
+        
     </div>
 
     

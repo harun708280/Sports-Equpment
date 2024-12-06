@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { DarkContext } from "../Optional/Theme";
+import { Zoom } from "react-awesome-reveal";
 const AllEquipment = () => {
   const loadData = useLoaderData();
   console.log(loadData);
@@ -40,6 +41,7 @@ const AllEquipment = () => {
         </div>
 
         <div className="">
+          <Zoom>
           <div className="overflow-x-auto">
             <table className={`${isDark ? "table " : "table table-zebra"}`}>
               {/* head */}
@@ -86,6 +88,7 @@ const AllEquipment = () => {
               </tbody>
             </table>
           </div>
+          </Zoom>
         </div>
       </div>
     </div>
