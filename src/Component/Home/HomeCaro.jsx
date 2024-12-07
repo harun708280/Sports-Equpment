@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
 import { Fade, Slide } from "react-awesome-reveal";
+import { NavLink } from "react-router-dom";
 
 const HomeCaro = () => {
   return (
@@ -25,9 +26,9 @@ const HomeCaro = () => {
                   <p className="text-sm md:text-lg">
                     Elevate your game with premium sports gear.
                   </p>
-                  <button className="px-6 py-3 bg-custom-gradient hover:bg-blue-700 text-white rounded-md shadow-md">
+                  <NavLink to='/all-Equipment'><button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
                     Details Now
-                  </button>
+                  </button></NavLink>
                 </Slide>
               </div>
             </div>
@@ -48,9 +49,9 @@ const HomeCaro = () => {
                   <p className="text-sm md:text-lg">
                     Perfect gear for athletes of all levels.
                   </p>
-                  <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                  <NavLink to='/all-Equipment'><button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
                     Details Now
-                  </button>
+                  </button></NavLink>
                 </Slide>
               </div>
             </div>
@@ -70,9 +71,9 @@ const HomeCaro = () => {
                   <p className="text-sm md:text-lg">
                     Perfect gear for athletes of all levels.
                   </p>
-                  <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                  <NavLink to='/all-Equipment'><button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
                     Details Now
-                  </button>
+                  </button></NavLink>
                 </Slide>
               </div>
             </div>
@@ -94,9 +95,9 @@ const HomeCaro = () => {
                   <p className="text-sm md:text-lg">
                     Perfect gear for athletes of all levels.
                   </p>
-                  <button className="px-6 py-3 bg-custom-gradient hover:bg-custom-gradient text-white rounded-md shadow-md">
+                  <NavLink to='/all-Equipment'><button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
                     Details Now
-                  </button>
+                  </button></NavLink>
                 </Slide>
               </div>
             </div>

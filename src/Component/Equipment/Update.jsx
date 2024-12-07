@@ -29,7 +29,7 @@ const Update = () => {
     const itemName = form.itemName.value;
     const categoryName = form.categoryName.value;
     const description = form.description.value;
-    const price = form.price.value;
+    const price = parseInt(form.price.value)
     const rating = form.rating.value;
     const customization = form.customization.value;
     const processingTime = form.processingTime.value;

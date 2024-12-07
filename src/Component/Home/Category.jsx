@@ -1,12 +1,14 @@
 import React from "react";
 import { Bounce, Fade } from "react-awesome-reveal";
 import { NavLink } from "react-router-dom";
+import olp from './olympic-athlete.json'
+import Lottie from "lottie-react";
 
 const Category = ({ category }) => {
   return (
     <div className="">
        
-        <Fade><h2 className="text-3xl text-center font-bold my-6">Sports Categories</h2></Fade>
+        <h2 className="text-3xl text-center font-bold my-6 flex items-center justify-center">Sports Categories <span><Lottie animationData={olp} className="w-20 h-20 "></Lottie></span> </h2>
         <div className="flex space-x-6 items-center justify-center my-7 text-xl">
         
         <h1>

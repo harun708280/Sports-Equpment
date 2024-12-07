@@ -178,11 +178,18 @@ const Nav = () => {
               LogOut
             </button>
           ) : (
-            <NavLink to="/login">
+            <div className=" space-x-3">
+              <NavLink to="/login">
               <button className="btn bg-custom-gradient hover:bg-[#6eb80e] text-white">
                 Login
               </button>
             </NavLink>
+            <NavLink to="/register">
+              <button className="btn bg-custom-gradient hover:bg-[#6eb80e] text-white">
+                Registration
+              </button>
+            </NavLink>
+            </div>
           )}
         </div>
       </div>

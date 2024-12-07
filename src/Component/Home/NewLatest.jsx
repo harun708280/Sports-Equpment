@@ -3,13 +3,15 @@ import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { NavLink } from "react-router-dom";
+import olp from './olympic-athlete.json'
+import Lottie from "lottie-react";
 
 const NewLatest = () => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const latestData = async () => {
-      const res = await fetch(`http://localhost:9000/latest-equipment`);
+      const res = await fetch(`https://sports-equiepment.vercel.app/latest-equipment`);
       const data = await res.json();
       setProduct(data);
     };
@@ -18,8 +20,8 @@ const NewLatest = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <h1 className="text-center text-4xl font-extrabold">Latest Collection</h1>
-      <p className="text-center text-lg text-gray-600 my-4 md:w-6/12 mx-auto">
+      <h1 className="text-center text-4xl font-extrabold flex items-center justify-center">Latest Collection <span><Lottie animationData={olp} className="w-20 h-20 "></Lottie></span> </h1>
+      <p className="text-center text-lg text-gray-600 my-4 md:w-6/12 mx-auto dark:text-white">
         Explore our latest collection of premium products, designed to offer the
         best in quality and style. Find the perfect match for your needs from
         our curated selection!
@@ -82,7 +84,7 @@ const NewLatest = () => {
           console.log(item.image); // You can check the data in the console
           return (
             <div
-              className="mr-8 shadow-lg relative   shadow-black rounded-lg my-12"
+              className="mr-8 shadow-lg relative    rounded-lg my-12"
               key={item._id}
             >
               {" "}
@@ -100,7 +102,7 @@ const NewLatest = () => {
                 </p>
               </div>
               <div className="px-5 pb-7">
-                <h1 className="text-xl my-3 font-bold text-gray-900">
+                <h1 className="text-xl my-3 font-bold text-gray-900 dark:text-white">
                   {item.itemName}
                 </h1>
                 <div className="flex items-center justify-between">
