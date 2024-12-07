@@ -38,7 +38,7 @@ const AddEquipment = () => {
       stockStatus,
       image,
     };
-    console.log(equipment);
+    
     fetch(`https://sports-equiepment.vercel.app/equipments`, {
       method: "POST",
       headers: {

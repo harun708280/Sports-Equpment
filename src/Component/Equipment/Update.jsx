@@ -53,6 +53,8 @@ const Update = () => {
       image,
       _id,
     };
+    
+    
 
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -130,6 +132,32 @@ const Update = () => {
             <form onSubmit={handleUpdate} className={`${isDark && 'text-black'}`}>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Item Name */}
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">User Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    defaultValue={itemName}
+                    value={user.displayName}
+                    placeholder="Enter item name"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">User Email</span>
+                  </label>
+                  <input
+                    type="text"
+                    defaultValue={itemName}
+                    value={user.email}
+                    placeholder="Enter item name"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Item Name</span>

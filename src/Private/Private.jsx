@@ -6,7 +6,6 @@ import { BallTriangle } from "react-loader-spinner";
 const Private = ({ children }) => {
   const { user, isLoading } = useContext(UserAuthContext);
   const location=useLocation()
-  console.log(location);
   
   if (isLoading) {
     return (

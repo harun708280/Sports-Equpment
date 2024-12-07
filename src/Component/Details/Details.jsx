@@ -11,7 +11,7 @@ const Details = () => {
     
     const location = useLocation();
     const loadData = useLoaderData();
-    console.log(loadData);
+    
     const { users, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, image } = loadData;
     const navigate = useNavigate();
     

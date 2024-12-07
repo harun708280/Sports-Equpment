@@ -11,7 +11,7 @@ const Service = () => {
             {/* Responsive container */}
             <div className="flex flex-wrap justify-center gap-4">
                 {/* Service Block 1 */}
-                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white w-full sm:w-5/12 lg:w-1/4">
+                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white dark:bg-slate-800 w-full sm:w-5/12 lg:w-1/4">
                     <div>
                         <span className="text-4xl text-[#6eb80e]">
                             <TbPlaneTilt />
@@ -23,7 +23,7 @@ const Service = () => {
                     </div>
                 </div>
                 {/* Service Block 2 */}
-                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white w-full sm:w-5/12 lg:w-1/4">
+                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white dark:bg-slate-800 w-full sm:w-5/12 lg:w-1/4">
                     <div>
                         <span className="text-4xl text-[#6eb80e]">
                             <PiShoppingBagOpenBold />
@@ -35,7 +35,7 @@ const Service = () => {
                     </div>
                 </div>
                 {/* Service Block 3 */}
-                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white w-full sm:w-5/12 lg:w-1/4">
+                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white dark:bg-slate-800 w-full sm:w-5/12 lg:w-1/4">
                     <div>
                         <span className="text-4xl text-[#6eb80e]">
                             <TfiReload />
@@ -47,7 +47,7 @@ const Service = () => {
                     </div>
                 </div>
                 {/* Service Block 4 */}
-                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white w-full sm:w-5/12 lg:w-1/4">
+                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white dark:bg-slate-800 w-full sm:w-5/12 lg:w-1/4">
                     <div>
                         <span className="text-4xl text-[#6eb80e]">
                             <TfiCup />
@@ -59,7 +59,7 @@ const Service = () => {
                     </div>
                 </div>
                 {/* Service Block 5 */}
-                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white w-full sm:w-5/12 lg:w-1/4">
+                <div className="flex p-5 space-x-6 items-center border rounded-md shadow-md bg-white dark:bg-slate-800 w-full sm:w-5/12 lg:w-1/4">
                     <div>
                         <span className="text-4xl text-[#6eb80e]">
                             <IoDiamond />

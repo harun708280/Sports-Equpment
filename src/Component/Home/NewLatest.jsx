@@ -81,7 +81,7 @@ const NewLatest = () => {
         swipeable
       >
         {product.map((item) => {
-          console.log(item.image); // You can check the data in the console
+          
           return (
             <div
               className="mr-8 shadow-lg relative    rounded-lg my-12"

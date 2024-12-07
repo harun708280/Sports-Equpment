@@ -7,7 +7,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   const { isDark } = useContext(DarkContext);
   return (
-    <div className={isDark ? "dark text-white" : "bg-base-200"}>
+    <div className="dark:bg-slate-800" >
       <footer class="   py-8">
         <div class="w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center">
           <div class="mb-4 md:mb-0 text-center md:text-left flex flex-col items-center">
@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
         <div className="divider"></div>
         <p class=" text-center">
-          &copy; 2024 YourWebsiteName. All rights reserved.
+          &copy; 2024 SportsZone. All rights reserved.
         </p>
       </footer>
     </div>

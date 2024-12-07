@@ -13,7 +13,7 @@ const LoginForm = () => {
     const {LoginGoogle,Login}=useContext(UserAuthContext)
     const [showPassword, setShowPassword] = useState(false);
     const location=useLocation()
-    console.log(location.state);
+   
     
     const navigate=useNavigate()
   const handleLogin = (e) => {
@@ -48,8 +48,8 @@ const LoginForm = () => {
 
 
     const user = { email, password };
-    console.log(user);
-    // You can add code to submit the form data to your backend or authentication service
+    
+    
   };
 
 

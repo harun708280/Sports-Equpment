@@ -14,8 +14,7 @@ const AllEquipment = () => {
 
   const [allData, setAllData] = useState(loadData);
   const [searchValue, setSearchValue] = useState("");
-  console.log(searchValue);
-
+ 
   const handleChangeValue = (e) => {
     const value = e.target.value;
     setSearchValue(value);
@@ -72,7 +71,7 @@ const AllEquipment = () => {
               type="text"
               value={searchValue}
               onChange={handleChangeValue}
-              className="mt-2 p-2 border border-gray-300  rounded-md w-full"
+              className="mt-2 p-2 border border-gray-300 dark:text-black rounded-md w-full"
               placeholder="Search by name, price, category, rating"
             />
           </div>

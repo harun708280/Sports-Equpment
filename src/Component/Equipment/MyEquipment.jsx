@@ -15,7 +15,7 @@ const MyEquipment = () => {
   const { user } = useContext(UserAuthContext);
   const userEmail = user?.email;
   const [myEquipment, setMyEquipment] = useState([]);
-  console.log(myEquipment);
+  
   const [isProfileVisible, setIsProfileVisible] = useState(false);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const MyEquipment = () => {
                   },
                 });
               }
-              console.log(data);
+             
             });
         } else if (
           /* Read more about handling dismissals below */

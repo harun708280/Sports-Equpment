@@ -14,7 +14,7 @@ const Home = () => {
 
     },[])
     const loadData=useLoaderData()
-    console.log(loadData);
+   
     const [category,setCategory]=useState([])
 
     useEffect(()=>{

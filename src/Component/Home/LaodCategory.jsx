@@ -4,7 +4,7 @@ import Product from './Product';
 
 const LaodCategory = () => {
     const loadData=useLoaderData()
-    console.log(loadData);
+    
     
     return (
         <div className='flex '>
