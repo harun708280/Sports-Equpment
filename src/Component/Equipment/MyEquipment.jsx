@@ -91,37 +91,21 @@ const MyEquipment = () => {
   };
 
   return (
-    <div className="flex w-11/12 my-12 mx-auto">
-      <div className="w-2/12 ">
-        <div className="p-4">
-          {/* Your Profile Title */}
-          <h1
-            className="text-3xl logo text-center font-bold mb-4 cursor-pointer"
-            onClick={handleToggle}
-          >
-            Your Profile
-          </h1>
-
-          
-          <div
-            className={`transition-all duration-500 ease-in-out ${
-              isProfileVisible
-                ? "max-h-[500px] opacity-100"
-                : "max-h-0 opacity-0"
-            } overflow-hidden`}
-          >
-            <img
-              className="w-full rounded-xl"
-              src={user.photoURL}
-              alt="Profile"
-            />
-            <h1 className="my-2 text-xl font-bold logo">{user.displayName}</h1>
-            <h1 className="text-xl font-bold">{user.email}</h1>
-            <button className="mt-4 btn bg-custom-gradient text-white">Edit Profile</button>
-          </div>
+    <div className="">
+      {
+        myEquipment.length===0 && <div className="text-center min-h-96 flex flex-col justify-center items-center">
+          <h1 className="text-center text-2xl font-bold">No Equipment Added Yet</h1>
+          <p className="text-gray-500 mt-2">
+            You haven't added any equipment to your collection. Click the button below to add your first equipment!
+          </p>
+          <NavLink to='/add-Equipment'>
+          <button className="bg-custom-gradient py-2 px-5 rounded-lg text-white mt-3">Add Equipment</button>
+          </NavLink>
         </div>
-      </div>
-      <div className="grid grid-cols-3 gap-8  mx-auto">
+      }
+      <div className="flex w-10/12 my-12 mx-auto">
+      
+      <div className="grid grid-cols-3 gap-12  mx-auto">
         {myEquipment.map((item) => (
           <Zoom duration={1500}>
             <div>
@@ -157,7 +141,7 @@ const MyEquipment = () => {
                       View Details <FaEye></FaEye>
                     </button>
                   </NavLink>
-                  <NavLink to={`/update/${item._id}`}><button  className="btn bg-green-600 text-white hover:bg-green-700">
+                  <NavLink to={`/update/${item._id}`}><button  className="btn bg-green-400 text-white hover:bg-green-700">
                     Update <FaPencilAlt />
                   </button></NavLink>
                   <button
@@ -173,6 +157,7 @@ const MyEquipment = () => {
           </Zoom>
         ))}
       </div>
+    </div>
     </div>
   );
 };

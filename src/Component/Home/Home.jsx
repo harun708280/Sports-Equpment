@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import HomeCaro from './HomeCaro';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData, useNavigation } from 'react-router-dom';
 import Product from './Product';
 import Category from './Category';
 import Service from './Service';
@@ -26,6 +26,8 @@ const Home = () => {
 
 
     },[])
+
+    const navigate=useNavigation()
     
     return (
         <div>
@@ -37,7 +39,11 @@ const Home = () => {
 
            </div>
            <div className="w-11/12 mx-auto">
+           {
+            navigate.state==='loading'?<h1>loading</h1>:
             <Outlet></Outlet>
+           }
+            
            </div>
            {/* <div className="">
             <NewLatest></NewLatest>

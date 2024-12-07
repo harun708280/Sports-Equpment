@@ -11,11 +11,13 @@ import MyEquipment from "../Component/Equipment/MyEquipment";
 import Details from "../Component/Details/Details";
 import Private from "../Private/Private";
 import Update from "../Component/Equipment/Update";
+import Error from "../Component/Error/Error";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout></Layout>,
+      errorElement:<Error></Error>,
       children:[
         {
           path:'/',
