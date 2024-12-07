@@ -2,7 +2,7 @@
 
 Welcome to the **Sports Equipment Store**! A one-stop shop for all your sports gear needs. Our platform offers a variety of products, easy-to-use features, and a seamless shopping experience.
 
-**Live Website URL:** [[Insert Your Live URL Here](https://sports-zone-by-harun.netlify.app/)]
+**Live Website URL:** ( https://sports-zone-by-harun.netlify.app/ )
 
 ## Features
 
