@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaGoogle,FaEye, FaEyeSlash,} from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../Firebase/Authentication";
@@ -6,6 +6,10 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || Login"
+
+},[])
     const {LoginGoogle,Login}=useContext(UserAuthContext)
     const [showPassword, setShowPassword] = useState(false);
     const location=useLocation()

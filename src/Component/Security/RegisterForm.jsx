@@ -1,10 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import toast, { Toaster, resolveValue } from "react-hot-toast";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import Swal from "sweetalert2";
 const RegisterForm = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || Registration"
+
+},[])
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState({
     name: "",

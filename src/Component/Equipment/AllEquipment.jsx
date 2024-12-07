@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { DarkContext } from "../Optional/Theme";
@@ -6,6 +6,10 @@ import { Fade, Zoom } from "react-awesome-reveal";
 import Typical from "react-typical";
 import { ReactTyped } from "react-typed";
 const AllEquipment = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || All-Equipment"
+
+},[])
   const loadData = useLoaderData();
 
   const [allData, setAllData] = useState(loadData);

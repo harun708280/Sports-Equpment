@@ -9,6 +9,10 @@ import NewLatest from './NewLatest';
 // import NewLatest from './NewLatest';
 
 const Home = () => {
+    useEffect(()=>{
+        document.title="Sports Zone || home"
+
+    },[])
     const loadData=useLoaderData()
     console.log(loadData);
     const [category,setCategory]=useState([])

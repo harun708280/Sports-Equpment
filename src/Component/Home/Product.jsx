@@ -23,7 +23,7 @@ const Product = ({ item }) => {
     image,
   } = item;
   return (
-    <Zoom duration={1500}>
+    
       <Card
   className="h-full"
   imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
@@ -61,7 +61,7 @@ const Product = ({ item }) => {
   </div>
 </Card>
 
-    </Zoom>
+    
   );
 };
 

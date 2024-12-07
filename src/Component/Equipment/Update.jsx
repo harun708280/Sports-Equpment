@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import Swal from "sweetalert2";
 import { DarkContext } from "../Optional/Theme";
 
 const Update = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || Update"
+
+},[])
   const {isDark}=useContext(DarkContext)
   const loadData = useLoaderData();
   const navigate=useNavigate()
@@ -124,7 +128,7 @@ const Update = () => {
           </h1>
           <div className="mt-7">
             <form onSubmit={handleUpdate} className={`${isDark && 'text-black'}`}>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 {/* Item Name */}
                 <div className="form-control">
                   <label className="label">
@@ -255,7 +259,7 @@ const Update = () => {
                 </div>
 
                 {/* Description */}
-                <div className="form-control col-span-2">
+                <div className="form-control md:col-span-2">
                   <label className="label">
                     <span className="label-text">Description</span>
                   </label>

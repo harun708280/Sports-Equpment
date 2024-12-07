@@ -8,6 +8,10 @@ import Swal from "sweetalert2";
 import { Zoom } from "react-awesome-reveal";
 
 const MyEquipment = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || My-Equipment"
+
+},[])
   const { user } = useContext(UserAuthContext);
   const userEmail = user?.email;
   const [myEquipment, setMyEquipment] = useState([]);
@@ -105,7 +109,7 @@ const MyEquipment = () => {
       }
       <div className="flex w-10/12 my-12 mx-auto">
       
-      <div className="grid grid-cols-3 gap-12  mx-auto">
+      <div className="grid md:grid-cols-3 gap-12  mx-auto">
         {myEquipment.map((item) => (
           <Zoom duration={1500}>
             <div>

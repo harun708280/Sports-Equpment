@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import { DarkContext } from "../Optional/Theme";
 import { Fade, Zoom } from "react-awesome-reveal";
 
 const AddEquipment = () => {
+  useEffect(()=>{
+    document.title="Sports Zone || Add-Equipment"
+
+},[])
   const { user } = useContext(UserAuthContext);
   const { isDark } = useContext(DarkContext);
 
@@ -87,7 +91,7 @@ const AddEquipment = () => {
               onSubmit={handleAddEquipment}
               className={`${isDark && "text-black"}`}
             >
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">User Name</span>
@@ -234,7 +238,7 @@ const AddEquipment = () => {
                 </div>
 
                 {/* Description */}
-                <div className="form-control col-span-2">
+                <div className="form-control md:col-span-2">
                   <label className="label">
                     <span className="label-text">Description</span>
                   </label>

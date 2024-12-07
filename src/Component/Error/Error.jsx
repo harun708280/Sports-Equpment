@@ -1,9 +1,13 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import er from './A404.json'
 import { NavLink } from 'react-router-dom';
 
 const Error = () => {
+    useEffect(()=>{
+        document.title="Sports ZOne || Error"
+
+    },[])
     return (
         <div>
             <div className="min-h-svh flex flex-col justify-center items-center">
