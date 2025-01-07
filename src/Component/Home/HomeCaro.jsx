@@ -4,18 +4,16 @@ import { Fade, Slide } from "react-awesome-reveal";
 import { NavLink } from "react-router-dom";
 import c1 from "/c1.jpg";
 import c2 from "/c2.jpg";
-import c3 from "/c4.jpg";
+import c3 from "/c3.jpg"; // Properly added
 import c4 from "/c4.jpg";
 import c5 from "/c5.jpg";
 import c6 from "/c6.jpg";
-import c8 from "/c8.jpg"
+
 const HomeCaro = () => {
   return (
     <div className="">
       <div className="h-[500px] sm:h-h-[60vh] md:h-[60vh] lg:h-[60vh]">
         <Carousel slideInterval={3000}>
-          {/* Slide 1 */}
-
           <div className="relative h-full">
             <img className="w-full h-full" src={c4} />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent">
@@ -30,7 +28,7 @@ const HomeCaro = () => {
                     Elevate your game with premium sports gear.
                   </p>
                   <NavLink to="/all-Equipment">
-                    <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                    <button className="px-6 py-3 bg-custom-gradient text-white rounded-md shadow-md">
                       Details Now
                     </button>
                   </NavLink>
@@ -51,7 +49,7 @@ const HomeCaro = () => {
                     Perfect gear for athletes of all levels.
                   </p>
                   <NavLink to="/all-Equipment">
-                    <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                    <button className="px-6 py-3 bg-custom-gradient text-white rounded-md shadow-md">
                       Details Now
                     </button>
                   </NavLink>
@@ -59,6 +57,7 @@ const HomeCaro = () => {
               </div>
             </div>
           </div>
+
           <div className="relative h-full">
             <img src={c2} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent">
@@ -71,7 +70,7 @@ const HomeCaro = () => {
                     Perfect gear for athletes of all levels.
                   </p>
                   <NavLink to="/all-Equipment">
-                    <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                    <button className="px-6 py-3 bg-custom-gradient text-white rounded-md shadow-md">
                       Details Now
                     </button>
                   </NavLink>
@@ -94,7 +93,7 @@ const HomeCaro = () => {
                     Perfect gear for athletes of all levels.
                   </p>
                   <NavLink to="/all-Equipment">
-                    <button className="px-6 py-3 bg-custom-gradient  text-white rounded-md shadow-md">
+                    <button className="px-6 py-3 bg-custom-gradient text-white rounded-md shadow-md">
                       Details Now
                     </button>
                   </NavLink>
@@ -103,6 +102,8 @@ const HomeCaro = () => {
             </div>
           </div>
         </Carousel>
+
+        
       </div>
     </div>
   );

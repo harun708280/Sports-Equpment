@@ -61,6 +61,9 @@ const Home = () => {
 
       <NewLatest></NewLatest>
       <NewsLatter></NewsLatter>
+
+
+      
     </div>
   );
 };
