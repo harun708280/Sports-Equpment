@@ -12,6 +12,7 @@ import Details from "../Component/Details/Details";
 import Private from "../Private/Private";
 import Update from "../Component/Equipment/Update";
 import Error from "../Component/Error/Error";
+import Cart from "../Component/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
           path:'/update/:id',
           element:<Update></Update>,
           loader:({params})=>fetch(`${import.meta.env.VITE_API}/equipments/${params.id}`)
+        },
+        {
+          path:'/cart',
+          element:<Cart></Cart>
         }
       ]
     },

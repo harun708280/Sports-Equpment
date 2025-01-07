@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserAuthContext } from "../../Firebase/Authentication";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
 import { DarkContext } from "./Theme";
 import olp from "./olympic-athlete.json";
@@ -27,7 +27,7 @@ const Nav = () => {
       .catch((er) => {});
   };
 
-  const [cart]=useCard()
+  const [cart] = useCard();
 
   return (
     <div
@@ -197,14 +197,14 @@ const Nav = () => {
             )}
           </button> */}
 
-          <div className="mr-6 relative">
+          <Link to='cart'><div className="mr-6 relative">
             <button className="flex  items-center gap-2">
-            <FaShoppingCart className="text-4xl" />
-              <div className="absolute -top-2 -right-7 badge badge-secondary rounded-full">{cart.length}</div>
+              <FaShoppingCart className="text-4xl" />
+              <div className="absolute -top-2 -right-7 badge badge-secondary rounded-full">
+                {cart.length}
+              </div>
             </button>
-
-            
-          </div>
+          </div></Link>
 
           {/* User Profile */}
           {user && (
@@ -221,15 +221,25 @@ const Nav = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-black bg-opacity-70 text-white rounded-box z-[1] w-[400px] p-2 shadow"
+                className="dropdown-content text-lg font-medium menu bg-black bg-opacity-70 text-white rounded-box z-[1] w-[400px] p-2 shadow"
               >
+                <li>
+                 <Link to='/cart'>
+                 <div className="mr-6 ">
+                    <button className="flex  items-center gap-2">
+                      <FaShoppingCart className="" /> 
+                      Total Cart
+                      <div className=" badge badge-secondary rounded-full">
+                        {cart.length}
+                      </div>
+                    </button>
+                  </div>
+                 </Link> 
+                </li>
                 <li>
                   <p onClick={Logout} className="text-lg font-medium">
                     <CiLogout className="text-white" /> Logout
                   </p>
-                </li>
-                <li>
-                  <a>Item 2</a>
                 </li>
               </ul>
             </div>

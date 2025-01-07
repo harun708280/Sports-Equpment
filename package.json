@@ -16,6 +16,7 @@
     "axios": "^1.7.9",
     "firebase": "^11.0.2",
     "flowbite-react": "^0.10.2",
+    "formik": "^2.4.6",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^8.0.0",
@@ -33,7 +34,8 @@
     "react-tooltip": "^5.28.0",
     "react-typed": "^2.0.12",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.14.5"
+    "sweetalert2": "^11.14.5",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
