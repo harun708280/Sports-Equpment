@@ -30,7 +30,7 @@ const Nav = () => {
   };
 
   return (
-    <div className={`${isDark ? "dark" : ""} fixed left-0 right-0 z-20 top-0 `}>
+    <div className={`${isDark ? "dark" : ""} fixed left-0 right-0 z-20 top-0  w-11/12 mx-auto`}>
       <div className="navbar bg-base-100 dark:bg-slate-800 w-full mx-auto px-4">
         <div className="navbar-start">
           {/* Logo */}

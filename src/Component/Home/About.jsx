@@ -28,13 +28,13 @@ const About = () => {
 
         {/* Content Section */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-950">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 ">
             About Us
           </h1>
-          <p className="text-xl font-semibold text-gray-700 mb-2 mt-5">
+          <p className="text-xl font-semibold  mb-2 mt-5">
             We Offer Quality Sports Gear
           </p>
-          <p className="text-gray-600 mt-5">
+          <p className=" mt-5">
             Discover a wide range of premium sports gear designed to elevate
             your performance. Whether you're a professional athlete or a fitness
             enthusiast, we ensure quality, durability, and comfort in every

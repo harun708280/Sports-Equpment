@@ -74,7 +74,7 @@ const Update = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`/equipments`, {
+        fetch(`${import.meta.env.VITE_API}/equipments`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

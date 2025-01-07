@@ -3,9 +3,10 @@ import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { DarkContext } from "../Optional/Theme";
 import { Fade, Zoom } from "react-awesome-reveal";
-
+import { ImSortAmountAsc } from "react-icons/im";
 import { ReactTyped } from "react-typed";
 import Product from "../Home/Product";
+import { FaSearch } from "react-icons/fa";
 const AllEquipment = () => {
   useEffect(()=>{
     document.title="Sports Zone || All-Equipment"
@@ -53,7 +54,7 @@ const AllEquipment = () => {
             
            
             <div className="flex  items-center space-x-4">
-            <p className="bg-custom-gradient py-2 px-5 text-white rounded">Search By : </p><ReactTyped 
+            <p className="bg-custom-gradient py-2 px-5 text-white rounded flex justify-center items-center gap-3"> <FaSearch /> Search By </p><ReactTyped 
             strings={[
               "Equipment Item Name",
               "User Email Name",
@@ -83,7 +84,7 @@ const AllEquipment = () => {
               onClick={() => handleSort("asc")}
               className="btn bg-custom-gradient text-white"
             >
-              Sort By Price
+             <ImSortAmountAsc /> Sort By Price 
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../Component/Optional/Nav";
 import { Outlet, ScrollRestoration, useNavigation } from "react-router-dom";
 import Footer from "../Component/Optional/Footer";
@@ -6,16 +6,24 @@ import { Toaster } from "react-hot-toast";
 import { BallTriangle } from "react-loader-spinner";
 
 const Layout = () => {
-  
+  const [isFirstLoading, setIsFirstLoading] = useState(true);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFirstLoading(false);
+    }, 1000); // ১ সেকেন্ডের জন্য লোডিং দেখানো
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <ScrollRestoration />
-      <Toaster></Toaster>
-      <Nav></Nav>
+      <Toaster />
+      <Nav />
 
       <div className="max-w-[1900px] mx-auto min-h-[calc(100svh-350px)]">
-        {navigation.state == "loading" ? (
+        {isFirstLoading || navigation.state === "loading" ? (
           <div className="flex justify-center items-center h-[500px]">
             <BallTriangle
               height={100}
@@ -23,20 +31,17 @@ const Layout = () => {
               radius={5}
               color="#4fa94d"
               ariaLabel="ball-triangle-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
               visible={true}
             />
           </div>
         ) : (
           <div className="mt-20">
-            <Outlet></Outlet>
+            <Outlet />
           </div>
         )}
-        
       </div>
 
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };
