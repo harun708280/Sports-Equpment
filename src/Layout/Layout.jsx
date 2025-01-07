@@ -29,7 +29,9 @@ const Layout = () => {
             />
           </div>
         ) : (
-          <Outlet></Outlet>
+          <div className="mt-20">
+            <Outlet></Outlet>
+          </div>
         )}
         
       </div>

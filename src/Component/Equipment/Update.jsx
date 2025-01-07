@@ -74,7 +74,7 @@ const Update = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`https://sports-equiepment.vercel.app/equipments`, {
+        fetch(`/equipments`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

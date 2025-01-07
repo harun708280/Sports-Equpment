@@ -30,7 +30,7 @@ const Nav = () => {
   };
 
   return (
-    <div className={`${isDark ? "dark" : ""}`}>
+    <div className={`${isDark ? "dark" : ""} fixed left-0 right-0 z-20 top-0 `}>
       <div className="navbar bg-base-100 dark:bg-slate-800 w-full mx-auto px-4">
         <div className="navbar-start">
           {/* Logo */}
@@ -68,7 +68,8 @@ const Nav = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              {
+                user?.email && <li>
                 <NavLink
                   to="/all-Equipment"
                   activeClassName="text-[#6eb80e] font-bold"
@@ -76,7 +77,9 @@ const Nav = () => {
                   All Sports Equipment
                 </NavLink>
               </li>
-              <li>
+              }
+              {
+                user?.email && <li>
                 <NavLink
                   to="/add-Equipment"
                   activeClassName="text-[#6eb80e] font-bold"
@@ -84,6 +87,7 @@ const Nav = () => {
                   Add Equipment
                 </NavLink>
               </li>
+              }
               <li>
                 <NavLink
                   to="/my-equipment"
@@ -123,7 +127,8 @@ const Nav = () => {
                 All Sports Equipment
               </NavLink>
             </li>
-            <li>
+            {
+              user?.email &&<li>
               <NavLink
                 to="/add-Equipment"
                 className={({ isActive }) =>
@@ -135,7 +140,9 @@ const Nav = () => {
                 Add Equipment
               </NavLink>
             </li>
-            <li>
+            }
+            {
+              user?.email && <li>
               <NavLink
                 to="/my-equipment"
                 className={({ isActive }) =>
@@ -147,6 +154,7 @@ const Nav = () => {
                 My Equipment
               </NavLink>
             </li>
+            }
           </ul>
         </div>
 

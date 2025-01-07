@@ -39,7 +39,7 @@ const AddEquipment = () => {
       image,
     };
     
-    fetch(`https://sports-equiepment.vercel.app/equipments`, {
+    fetch(`${import.meta.env.VITE_API}/equipments`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

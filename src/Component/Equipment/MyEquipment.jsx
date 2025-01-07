@@ -6,6 +6,8 @@ import Rating from "react-rating";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Zoom } from "react-awesome-reveal";
+import axios from "axios";
+import AxiosSecure from "../AxiosSecure";
 
 const MyEquipment = () => {
   useEffect(()=>{
@@ -17,20 +19,28 @@ const MyEquipment = () => {
   const [myEquipment, setMyEquipment] = useState([]);
   
   const [isProfileVisible, setIsProfileVisible] = useState(false);
+  const axiosSec=AxiosSecure()
 
   useEffect(() => {
-    if (userEmail) {
-      const fetchData = async () => {
-        const res = await fetch(
-          `https://sports-equiepment.vercel.app/all-Equipment?user=${userEmail}`
-        );
-        const data = await res.json();
+    // if (userEmail) {
+    //   const fetchData = async () => {
+    //     const res = await fetch(
+    //       `http://localhost:9000/all-Equipment?user=${userEmail}`
+    //     );
+    //     const data = await res.json();
 
-        setMyEquipment(data);
-      };
-      fetchData();
-    }
-  }, []);
+    //     setMyEquipment(data);`
+    //   };
+    //   fetchData();
+    // }
+
+    // axios.get(`/all-Equipment?user=${userEmail}`,{
+    //   withCredentials:true
+    // })
+    // .then(res=>setMyEquipment(res.data))
+    axiosSec.get(`/all-Equipment?user=${userEmail}`)
+    .then(res=>setMyEquipment(res.data))
+  }, [user.email]);
 
   const handleDelete = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -53,7 +63,7 @@ const MyEquipment = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://sports-equiepment.vercel.app/equipments/${id}`, {
+          fetch(`${import.meta.env.VITE_API}/equipments/${id}`, {
             method: "DELETE",
             headers: {
               "content-type": "application/json",

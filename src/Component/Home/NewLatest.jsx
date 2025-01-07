@@ -11,7 +11,7 @@ const NewLatest = () => {
 
   useEffect(() => {
     const latestData = async () => {
-      const res = await fetch(`https://sports-equiepment.vercel.app/latest-equipment`);
+      const res = await fetch(`${import.meta.env.VITE_API}/latest-equipment`);
       const data = await res.json();
       setProduct(data);
     };

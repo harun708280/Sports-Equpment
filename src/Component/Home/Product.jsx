@@ -25,14 +25,14 @@ const Product = ({ item }) => {
   return (
     
       <Card
-  className="h-full"
+  className="h-full group"
   imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
   
 >
   <img 
     src={image} 
     alt="Apple Watch Series 7 in colors pink, silver, and black" 
-    className="w-full h-full object-cover" 
+    className="w-full h-full object-cover group-hover:scale-110 duration-300 rounded-lg" 
   />
   <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
     {itemName}

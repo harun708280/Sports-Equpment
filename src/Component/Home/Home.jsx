@@ -6,6 +6,8 @@ import Product from './Product';
 import Category from './Category';
 import Service from './Service';
 import NewLatest from './NewLatest';
+import About from './About';
+import NewsLatter from './NewsLatter';
 // import NewLatest from './NewLatest';
 
 const Home = () => {
@@ -19,7 +21,7 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchData=async()=>{
-            const res=await fetch(`https://sports-equiepment.vercel.app/equipments/categories`)
+            const res=await fetch(`${import.meta.env.VITE_API}/equipments/categories`)
             const data=await res.json()
 
             setCategory(data)
@@ -49,11 +51,11 @@ const Home = () => {
            }
             
            </div>
-           {/* <div className="">
-            <NewLatest></NewLatest>
 
-           </div> */}
+           <About></About>
+           
            <NewLatest></NewLatest>
+           <NewsLatter></NewsLatter>
 
 
 

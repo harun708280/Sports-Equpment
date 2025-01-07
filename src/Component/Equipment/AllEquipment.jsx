@@ -3,14 +3,17 @@ import { NavLink, useLoaderData } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { DarkContext } from "../Optional/Theme";
 import { Fade, Zoom } from "react-awesome-reveal";
-import Typical from "react-typical";
+
 import { ReactTyped } from "react-typed";
+import Product from "../Home/Product";
 const AllEquipment = () => {
   useEffect(()=>{
     document.title="Sports Zone || All-Equipment"
 
 },[])
   const loadData = useLoaderData();
+  
+  
 
   const [allData, setAllData] = useState(loadData);
   const [searchValue, setSearchValue] = useState("");
@@ -21,7 +24,7 @@ const AllEquipment = () => {
     serchHandle(value);
   };
   const serchHandle = (value) => {
-    fetch(`https://sports-equiepment.vercel.app/all-Equipment?search=${value}`)
+    fetch(`${import.meta.env.VITE_API}/all-Equipment?search=${value}`)
       .then((res) => res.json())
       .then((data) => {
         setAllData(data);
@@ -29,7 +32,7 @@ const AllEquipment = () => {
   };
 
   const handleSort = (sort) => {
-    fetch(`https://sports-equiepment.vercel.app/all-Equipment?sort=${sort}`)
+    fetch(`${import.meta.env.VITE_API}/all-Equipment?sort=${sort}`)
       .then((res) => res.json())
       .then((data) => {
         setAllData(data);
@@ -90,53 +93,18 @@ const AllEquipment = () => {
             allData.length===0 && <h1 className="text-center text-3xl font-semibold">Sorry This Product Not Available</h1>
           }
           <Fade>
-            <div className="overflow-x-auto">
-              <table className={`${isDark ? "table " : "table table-zebra"}`}>
-                {/* head */}
-                {
-                  allData.length>0 && <thead>
-                  <tr className="text-lg bg-custom-gradient text-white">
-                    <th></th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Category,</th>
-                    <th>Price</th>
-                    <th>Rating</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                }
-                <tbody>
+            <div className="">
+                   <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6  my-12">
+                   {allData.map((item, idx) => <Product item={item}></Product>)}
+
+
+                   </div>
+                
                   {/* row 1 */}
 
-                  {allData.map((item, idx) => (
-                    <tr className={`${isDark ? "bg-green-500" : ""}`}>
-                      <th>{idx + 1}</th>
-                      <td>
-                        <img className="h-14 w-14" src={item.image} alt="" />
-                      </td>
-                      <td>{item.itemName}</td>
-                      <td>{item.categoryName}</td>
-                      <td>{item.price} Taka</td>
-                      <td className="flex items-center space-x-6">
-                        {item.rating}{" "}
-                        <span className="text-orange-600">
-                          <IoIosStar />
-                        </span>
-                      </td>
-                      <td>
-                        <NavLink to={`/details/${item._id}`}>
-                          <button className="btn bg-[#6eb80e] text-white">
-                            Details
-                          </button>
-                        </NavLink>
-                      </td>
-                    </tr>
-                  ))}
-
+                 
                   {/* row 2 */}
-                </tbody>
-              </table>
+                
             </div>
           </Fade>
         </div>

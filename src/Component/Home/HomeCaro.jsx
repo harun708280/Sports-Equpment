@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const HomeCaro = () => {
   return (
     <div className="w-11/12  mx-auto py-10">
-      <div className="h-[500px] sm:h-[600px] md:h-[600px] lg:h-[600px]">
+      <div className="h-[500px] sm:h-h-[60vh] md:h-[60vh] lg:h-[60vh]">
         <Carousel slideInterval={3000}>
           {/* Slide 1 */}
 

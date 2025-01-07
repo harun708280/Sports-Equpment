@@ -22,17 +22,17 @@ const router = createBrowserRouter([
         {
           path:'/',
           element:<Home></Home>,
-          loader:()=>fetch(`https://sports-equiepment.vercel.app/equipments`),
+          loader:()=>fetch(`${import.meta.env.VITE_API}/equipments`),
           children:[
             {
               path:'/Equipment/:category',
               element:<LaodCategory></LaodCategory>,
-              loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments?category=${ params.category}`)
+              loader:({params})=>fetch(`${import.meta.env.VITE_API}/equipments?category=${ params.category}`)
             },
             {
               path:'/',
               element:<LaodCategory></LaodCategory>,
-              loader:()=>fetch(`https://sports-equiepment.vercel.app/equipments`)
+              loader:()=>fetch(`${import.meta.env.VITE_API}/equipments`)
             }
           ]
         },
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         {
           path:'/all-Equipment',
           element:<AllEquipment></AllEquipment>,
-          loader:()=>fetch(`https://sports-equiepment.vercel.app/all-Equipment`)
+          loader:()=>fetch(`${import.meta.env.VITE_API}/all-Equipment`)
 
         },
         {
@@ -63,12 +63,12 @@ const router = createBrowserRouter([
         {
           path:'/details/:id',
           element:<Private><Details></Details></Private>,
-          loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments/${params.id}`)
+          loader:({params})=>fetch(`${import.meta.env.VITE_API}/equipments/${params.id}`)
         },
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://sports-equiepment.vercel.app/equipments/${params.id}`)
+          loader:({params})=>fetch(`${import.meta.env.VITE_API}/equipments/${params.id}`)
         }
       ]
     },
