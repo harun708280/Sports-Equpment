@@ -7,6 +7,7 @@ import olp from "./olympic-athlete.json";
 import Lottie from "lottie-react";
 import { CiLogout } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
+import useCard from "../../Hooks/useCard";
 const Nav = () => {
   const animation = {
     loop: true,
@@ -25,6 +26,8 @@ const Nav = () => {
       .then((result) => {})
       .catch((er) => {});
   };
+
+  const [cart]=useCard()
 
   return (
     <div
@@ -197,7 +200,7 @@ const Nav = () => {
           <div className="mr-6 relative">
             <button className="flex  items-center gap-2">
             <FaShoppingCart className="text-4xl" />
-              <div className="absolute -top-2 -right-7 badge badge-secondary rounded-full">0</div>
+              <div className="absolute -top-2 -right-7 badge badge-secondary rounded-full">{cart.length}</div>
             </button>
 
             
