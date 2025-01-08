@@ -28,6 +28,8 @@ const Nav = () => {
   };
 
   const [cart] = useCard();
+  
+  
 
   return (
     <div
