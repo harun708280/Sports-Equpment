@@ -28,8 +28,6 @@ const Nav = () => {
   };
 
   const [cart] = useCard();
-  
-  
 
   return (
     <div
@@ -42,7 +40,7 @@ const Nav = () => {
           {/* Logo */}
           <NavLink to="/" className="flex items-center space-x-2">
             <Lottie animationData={olp} className="w-12" />
-            <span className="hidden md:inline-block text-2xl font-bold text-[#6eb80e]">
+            <span className="hidden md:inline-block text-2xl font-bold text-[#e11d48]">
               Sports Zone
             </span>
           </NavLink>
@@ -70,7 +68,7 @@ const Nav = () => {
               className="menu menu-sm dropdown-content bg-base-100 mt-3 p-2 shadow rounded-box z-[1] w-52"
             >
               <li>
-                <NavLink to="/" activeClassName="text-[#6eb80e] font-bold">
+                <NavLink to="/" activeClassName="text-[#e11d48] font-bold">
                   Home
                 </NavLink>
               </li>
@@ -78,7 +76,7 @@ const Nav = () => {
                 <li>
                   <NavLink
                     to="/all-Equipment"
-                    activeClassName="text-[#6eb80e] font-bold"
+                    activeClassName="text-[#e11d48] font-bold"
                   >
                     All Sports Equipment
                   </NavLink>

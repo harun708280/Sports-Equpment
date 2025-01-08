@@ -19,7 +19,18 @@ const validationSchema = Yup.object({
 
 const Cart = () => {
   const [cart, refetch] = useCard();
-  
+  const [quantity, setQuantity] = useState(0);
+
+  const handleIncrement = (data) => {
+    if (quantity === 5) {
+      return toast
+      .error("sorry maximum 5product add to cart");
+    }
+    setQuantity(quantity + 1);
+  };
+  const handleDecrement = () => {
+    setQuantity(quantity - 1);
+  };
 
 
   return (

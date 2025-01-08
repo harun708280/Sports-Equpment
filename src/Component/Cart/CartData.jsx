@@ -30,6 +30,24 @@ const CartData = ({ item, index }) => {
         const {data}=await axiosPublic.patch(`quantity-update/${id}`,{quantity:quantity-1})
         refetch()
       };
+
+      const handelDelete=async(id)=>{
+
+        try{
+
+          const {data}=await axiosPublic.delete(`/cart-delete/${id}`)
+          console.log(data);
+          
+          toast.success('successfully  remove this item ')
+          refetch()
+
+        }catch (er){
+          console.log(er);
+          
+
+        }
+
+      }
   return (
     
       <tr>
@@ -74,7 +92,7 @@ const CartData = ({ item, index }) => {
         </td>
         <th>{item?.Equipment?.price * quantity}</th>
         <th>
-          <button className="hover:text-red-500">Delete</button>
+          <button onClick={()=>handelDelete(item._id)} className="hover:text-red-500">Delete</button>
         </th>
       </tr>
    
