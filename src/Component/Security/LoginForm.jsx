@@ -56,6 +56,11 @@ const LoginForm = () => {
   const handleGoogleLogin=()=>{
     LoginGoogle()
     .then(result=>{
+      console.log();
+      const email=result?.user.email
+      const name=result?.user.displayName
+      const image=result?.user.photoURL
+      
         toast.success('successfully login')
         navigate(`${location.state?location.state:'/'}`)
     })
