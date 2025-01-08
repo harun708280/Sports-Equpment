@@ -49,7 +49,7 @@ const Home = () => {
           />
         </div>
       </div>
-      <Service></Service>
+      
       <div className="">
         <Category category={category}></Category>
       </div>
