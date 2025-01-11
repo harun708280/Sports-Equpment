@@ -4,6 +4,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../Firebase/Authentication";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import usePublicAxios from "../../Hooks/usePublicAxios";
 
 const LoginForm = () => {
   useEffect(()=>{
@@ -13,6 +14,7 @@ const LoginForm = () => {
     const {LoginGoogle,Login}=useContext(UserAuthContext)
     const [showPassword, setShowPassword] = useState(false);
     const location=useLocation()
+    const axiosPublic=usePublicAxios()
    
     
     const navigate=useNavigate()
@@ -60,6 +62,13 @@ const LoginForm = () => {
       const email=result?.user.email
       const name=result?.user.displayName
       const image=result?.user.photoURL
+
+      const userData={
+        name,email,image,role:'customer'
+      }
+
+      axiosPublic.post("/users", userData);
+      
       
         toast.success('successfully login')
         navigate(`${location.state?location.state:'/'}`)

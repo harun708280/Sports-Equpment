@@ -13,6 +13,7 @@ import Private from "../Private/Private";
 import Update from "../Component/Equipment/Update";
 import Error from "../Component/Error/Error";
 import Cart from "../Component/Cart/Cart";
+import AdminLayOut from "../Layout/AdminLayOut";
 
 const router = createBrowserRouter([
     {
@@ -77,6 +78,12 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'/dashboard-admin',
+      element:<AdminLayOut></AdminLayOut>,
+      errorElement:<Error></Error>
+      
+    }
   ]);
 
 export default router

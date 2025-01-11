@@ -8,6 +8,10 @@ import Lottie from "lottie-react";
 import { CiLogout } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import useCard from "../../Hooks/useCard";
+import { FaCodePullRequest } from "react-icons/fa6";
+import useRole from "../../Hooks/useRole";
+import { TfiDashboard } from "react-icons/tfi";
+import { LuLayoutDashboard } from "react-icons/lu";
 const Nav = () => {
   const animation = {
     loop: true,
@@ -20,6 +24,9 @@ const Nav = () => {
 
   const { name, LoginGoogle, user, Logout } = useContext(UserAuthContext);
   const { isDark, setIsDark } = useContext(DarkContext);
+  const [role]=useRole()
+  
+  
 
   const handleLoginGoogle = () => {
     LoginGoogle()
@@ -131,7 +138,7 @@ const Nav = () => {
                 All Sports Equipment
               </NavLink>
             </li>
-            {user?.email && (
+            {/* {user?.email && (
               <li>
                 <NavLink
                   to="/add-Equipment"
@@ -158,7 +165,7 @@ const Nav = () => {
                   My Equipment
                 </NavLink>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
 
@@ -206,8 +213,64 @@ const Nav = () => {
             </button>
           </div></Link>
 
-          {/* User Profile */}
-          {user && (
+          
+          {user && role==='admin' && (
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <div tabIndex={0} role="button" className=" m-1">
+                <img
+                  className="w-14 h-14 rounded-full"
+                  src={
+                    user?.photoURL ||
+                    "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
+                  }
+                  alt="User"
+                />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content text-lg font-medium menu bg-black bg-opacity-70 text-white rounded-box z-[1] w-[400px] p-2 shadow"
+              >
+                
+                <li>
+                  <NavLink to='/dashboard-admin'><p className="flex items-center gap-4"><LuLayoutDashboard /> Admin Dashboard</p></NavLink>
+                </li>
+                <li>
+                  <p onClick={Logout} className="text-lg font-medium">
+                    <CiLogout className="text-white" /> Logout
+                  </p>
+                </li>
+              </ul>
+            </div>
+          )}
+          {user && role==='seller' && (
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <div tabIndex={0} role="button" className=" m-1">
+                <img
+                  className="w-14 h-14 rounded-full"
+                  src={
+                    user?.photoURL ||
+                    "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
+                  }
+                  alt="User"
+                />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content text-lg font-medium menu bg-black bg-opacity-70 text-white rounded-box z-[1] w-[400px] p-2 shadow"
+              >
+                
+                <li>
+                  <p><TfiDashboard className="text-2xl" />  Seller DashBoard</p>
+                </li>
+                <li>
+                  <p onClick={Logout} className="text-lg font-medium">
+                    <CiLogout className="text-white" /> Logout
+                  </p>
+                </li>
+              </ul>
+            </div>
+          )}
+          {user && role==='customer' && (
             <div className="dropdown dropdown-bottom dropdown-end">
               <div tabIndex={0} role="button" className=" m-1">
                 <img
@@ -235,6 +298,9 @@ const Nav = () => {
                     </button>
                   </div>
                  </Link> 
+                </li>
+                <li>
+                  <p><FaCodePullRequest /> Become Seller</p>
                 </li>
                 <li>
                   <p onClick={Logout} className="text-lg font-medium">

@@ -12,7 +12,7 @@ const Layout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFirstLoading(false);
-    }, 1000); // ১ সেকেন্ডের জন্য লোডিং দেখানো
+    }, 1000); 
     return () => clearTimeout(timer);
   }, []);
 
